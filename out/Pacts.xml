@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pacts>
+  <Pact itemID="HellPass13">
+    <Name>Hell Pass 13 (Alt)</Name>
+    <Tags>Hell</Tags>
+    <Duration>9999</Duration>
+    <App trigger="OnEquip" effect="BaseBossTier" amount="2"></App>
+    <Description>Bosses start two tiers up</Description>
+    <Rarity>0</Rarity>
+    <Brand></Brand>
+  </Pact>
+  <Pact itemID="HellPass14">
+    <Name>Hell Pass 14</Name>
+    <Tags>Hell</Tags>
+    <Duration>9999</Duration>
+    <App trigger="OnEquip" effect="BaseBossTier" amount="2"></App>
+
+  </Pact>
+</Pacts>

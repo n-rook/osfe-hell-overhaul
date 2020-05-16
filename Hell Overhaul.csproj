@@ -1,8 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>Hell_Overhaul</RootNamespace>
   </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="del /q &quot;$(ProjectDir)out\*&quot;&#xD;&#xA;&#xD;&#xA;xcopy &quot;$(ProjectDir)bin\Debug\netstandard2.0\Hell Overhaul.dll&quot; &quot;$(ProjectDir)out\&quot; /Y&#xD;&#xA;xcopy &quot;$(ProjectDir)data\*&quot; &quot;$(ProjectDir)out\&quot; /Y&#xD;&#xA;xcopy &quot;$(ProjectDir)out\*&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\One Step From Eden\OSFE_Data\StreamingAssets\Mods\Hell Overhaul&quot; /Y&#xD;&#xA;" />
+  </Target>
 
 </Project>
