@@ -10,10 +10,17 @@
     <Brand></Brand>
   </Pact>
   <Pact itemID="HellPass14">
-    <Name>Hell Pass 14</Name>
+    <Name>Hell Pass 14 (Alt)</Name>
     <Tags>Hell</Tags>
     <Duration>9999</Duration>
-    <App trigger="OnEquip" effect="BaseBossTier" amount="2"></App>
-
+	  <Description>Pacts require two Removes to remove</Description>
+    <App trigger="OnEquip" effect="PactRemoval" amount="2"></App>
+  </Pact>
+  <Pact itemID="HellPass15">
+    <Name>Hell Pass 15</Name>
+    <Tags>Hell</Tags>
+    <Duration>9999</Duration>
+    <Description>Spells are received as if you had 15 fewer Luck</Description>
+    <App trigger="OnEquip" effect="SpellLuck" amount="-15"></App>
   </Pact>
 </Pacts>
