@@ -60,8 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddHellEffects.cs" />
+    <Compile Include="CustomHell.cs" />
     <Compile Include="CreatePactObjectPrototypesPatch.cs" />
+    <Compile Include="EnemyCalculateLoopDelayPatch.cs" />
     <Compile Include="HellPassButtonUpdateButtonPatch.cs" />
     <Compile Include="ItemManDebug.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

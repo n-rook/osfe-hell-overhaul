@@ -39,8 +39,8 @@ namespace Hell_Overhaul
         {
             var hells = __instance.hellPasses;
 
-            Debug.Log("Loaded hells have IDs " + hells.Select(i => i.itemID).Join());
-            Debug.Log("HP13 is: " + hells[14].description);
+            // Debug.Log("Loaded hells have IDs " + hells.Select(i => i.itemID).Join());
+            // Debug.Log("HP13 is: " + hells[14].description);
         }
     }
 }
