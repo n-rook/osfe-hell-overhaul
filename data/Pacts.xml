@@ -13,13 +13,13 @@
     <Name>Frantic Hell</Name>
     <Tags>Hell</Tags>
     <Duration>9999</Duration>
-    <Description>Enemies attack more quickly in crowded rooms</Description>
+    <Description>Enemies don't slow down.</Description>
   </Pact>
   <Pact itemID="HellPass15">
     <Name>Hell of Perjurers</Name>
     <Tags>Hell</Tags>
     <Duration>9999</Duration>
-	  <Description>Start with no Remove. Pacts require 2 Removes to remove</Description>
+	  <Description>No initial Remove. 2x Remove for pacts.</Description>
   </Pact>
   <Pact itemID="HellPass16">
     <Name>Hell of Indolence</Name>

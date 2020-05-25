@@ -22,7 +22,7 @@ namespace Hell_Overhaul
             foreach (var h in __instance.hellPasses) {
                 if (hellDict.ContainsKey(h.itemID))
                 {
-                    Debug.Log($"Overwriting ${h.itemID}");
+                    Debug.Log($"Overwriting {h.itemID}");
                 }
                 hellDict[h.itemID] = h;
             }
