@@ -2,7 +2,8 @@
 
 namespace Hell_Overhaul
 {
-    public class Class1
+    public class AddHellEffects
     {
+         
     }
 }
