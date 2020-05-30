@@ -4,12 +4,19 @@ using UnityEngine;
 
 namespace Hell_Overhaul
 {
+    // How I make custom hell mode images
+    // 1. Take 256x256 blank canvas
+    // 2. Paste hell sprite in so it's in the center
+    // 3. Edit as needed (hue: 130)
+    // In theory I could make custom images but... I'm not an artist.
+
     public enum CustomHellPassEffect
     {
         // note that the underlying ints of these enums are NOT the same as their hell pass values
         NO_BUSY_ROOM_SLOWDOWN,
         NO_INITIAL_REMOVE,  // not yet implemented
         TWO_REMOVES_FOR_PACT,
+        BAD_REWARDS,
     }
 
     public static class CustomHell
@@ -20,6 +27,7 @@ namespace Hell_Overhaul
             { CustomHellPassEffect.NO_BUSY_ROOM_SLOWDOWN, 14 },
             { CustomHellPassEffect.NO_INITIAL_REMOVE, 15 },
             { CustomHellPassEffect.TWO_REMOVES_FOR_PACT, 15 },
+            { CustomHellPassEffect.BAD_REWARDS, 16 },
         };
 
         public static bool IsHellEnabled(RunCtrl rc, CustomHellPassEffect e)

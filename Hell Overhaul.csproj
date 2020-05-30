@@ -68,6 +68,7 @@
     <Compile Include="HellPassButtonUpdateButtonPatch.cs" />
     <Compile Include="ItemManDebug.cs" />
     <Compile Include="ListCardRemoveThisCardPatch.cs" />
+    <Compile Include="PostCtrlGenerateRewardValuePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
