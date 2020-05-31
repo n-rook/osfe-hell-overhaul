@@ -21,7 +21,7 @@
     <Name>HellPass14</Name>
     <Tags>Hell</Tags>
     <Duration>9999</Duration>
-    <Description>Enemies don't slow down</Description>
+    <Description>Enemies attack more quickly</Description>
   </Pact>
   <Pact itemID="HellPass15">
     <Name>HellPass15</Name>

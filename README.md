@@ -15,10 +15,10 @@ The new Hell Pass 11 replaces the existing one. Instead of all hostages turning 
 The new Hell Pass 13 just increases the tier to 3, making a more gradual increase in difficulty.
 
 ### 14
-This one makes enemies attack more quickly in crowded rooms. In the base game, more enemies, structures and minions in a single room cause the enemies to pause for longer between attacks. In order to make hallway fights harder and more engaging, this effect is removed. 
+This one makes enemies attack more quickly in crowded rooms. In the base game, more enemies, structures and minions in a single room cause the enemies to pause for longer between attacks; [see the wiki for details](https://onestepfromeden.gamepedia.com/Enemies#Stagger). In order to make hallway fights harder and more engaging, the impact of these delays is significantly reduced; "real enemies" increase the delay by only 10%, and structures and minions have no impact at all.
 
 ### 15
-15 increases the number of removes required to remove a pact to 3. Removing pacts is very strong, so I'd like to force players to actually take and survive the pacts instead if they want bonuses.
+15 increases the number of removes required to remove a pact to 3. Removing pacts is very strong, so I'd like to force players to actually take and survive the pacts if they want bonuses.
 
 I may in the future change this down to 2 removes, or change it to 2 removes and get rid of the free remove at the start of the run.
 
@@ -45,4 +45,6 @@ The intent is to make the early game less punishing while still forcing the play
 
 ### Things I'd like to work on in the future
 
-The new HP11 doubles the number of hostages in the game, though half of them are evil, so the already top-tier Soul Food becomes even stronger. This isn't great, but I don't really want to nerf just one artifact in this mod.
+I have plans for 19 and 20, but I'd like to test the first 18 levels first. Hell Overhaul 18 is easier than Hell Pass 14 in the base game, so there's more room to add difficulty.
+
+I'm concerned that Soul Food is way too strong now that there are double the hostages.
