@@ -13,6 +13,7 @@ namespace Hell_Overhaul
     public enum CustomHellPassEffect
     {
         // note that the underlying ints of these enums are NOT the same as their hell pass values
+        EVIL_HOSTAGE_IF_NO_GOOD_ONE,
         NO_BUSY_ROOM_SLOWDOWN,
         NO_INITIAL_REMOVE,  // not yet implemented
         TWO_REMOVES_FOR_PACT,
@@ -24,6 +25,7 @@ namespace Hell_Overhaul
         // If A: i, then A is enabled at or above hell pass i
         private static Dictionary<CustomHellPassEffect, int> HellLevels = new Dictionary<CustomHellPassEffect, int>()
         {
+            { CustomHellPassEffect.EVIL_HOSTAGE_IF_NO_GOOD_ONE, 11 },
             { CustomHellPassEffect.NO_BUSY_ROOM_SLOWDOWN, 14 },
             { CustomHellPassEffect.NO_INITIAL_REMOVE, 15 },
             { CustomHellPassEffect.TWO_REMOVES_FOR_PACT, 15 },

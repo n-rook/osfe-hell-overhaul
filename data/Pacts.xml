@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Pacts>
+  <Pact itemID="HellPass11">
+    <Name>HellPass11</Name>
+    <Tags>Hell</Tags>
+    <Duration>9999</Duration>
+    <Description>Evil hostages appear if good ones don't</Description>
+    <Rarity>0</Rarity>
+    <Brand></Brand>
+  </Pact>
   <Pact itemID="HellPass13">
     <Name>HellPass13</Name>
     <Tags>Hell</Tags>

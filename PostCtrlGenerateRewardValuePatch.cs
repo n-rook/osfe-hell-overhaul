@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using System;
 using System.Reflection;
+using UnityEngine;
 
 namespace Hell_Overhaul
 {
@@ -8,7 +9,7 @@ namespace Hell_Overhaul
     [HarmonyPatch("GenerateRewardValue")]
     class PostCtrlGenerateRewardValuePatch
     {
-        private static readonly FieldInfo RUN_CTRL = typeof(ListCard).GetField("runCtrl", BindingFlags.Instance | BindingFlags.NonPublic);
+        private static readonly FieldInfo RUN_CTRL = typeof(PostCtrl).GetField("runCtrl", BindingFlags.Instance | BindingFlags.NonPublic);
         private static readonly int REWARD_PENALTY = 10;
 
         private static RunCtrl getRunCtrl(PostCtrl postCtrl)
