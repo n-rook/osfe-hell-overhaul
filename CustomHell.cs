@@ -18,6 +18,7 @@ namespace Hell_Overhaul
         NO_INITIAL_REMOVE,  // not yet implemented
         TWO_REMOVES_FOR_PACT,
         BAD_REWARDS,
+        IMPERFECT_SHIELDS,
     }
 
     public static class CustomHell
@@ -30,6 +31,7 @@ namespace Hell_Overhaul
             { CustomHellPassEffect.NO_INITIAL_REMOVE, 15 },
             { CustomHellPassEffect.TWO_REMOVES_FOR_PACT, 15 },
             { CustomHellPassEffect.BAD_REWARDS, 16 },
+            { CustomHellPassEffect.IMPERFECT_SHIELDS, 17 },
         };
 
         public static bool IsHellEnabled(RunCtrl rc, CustomHellPassEffect e)
