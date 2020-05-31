@@ -13,7 +13,7 @@ namespace Hell_Overhaul
     [HarmonyPatch("RemoveThisCard")]
     class ListCardRemoveThisCardPatch
     {
-        private static readonly int HELL_PRICE = 2;
+        private static readonly int HELL_PRICE = 3;
         private static readonly FieldInfo DECK_SCREEN = typeof(ListCard).GetField("deckScreen", BindingFlags.Instance | BindingFlags.NonPublic);
         private static readonly MethodInfo REMOVE_CARD = typeof(ListCard).GetMethod("_RemoveCard", BindingFlags.Instance | BindingFlags.NonPublic);
 
