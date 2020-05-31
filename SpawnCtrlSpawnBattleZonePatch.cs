@@ -29,9 +29,9 @@ namespace Hell_Overhaul
             }
 
             BattleGrid battleGrid = spawnCtrl.ti.mainBattleGrid;
-            foreach (Cpu currentEnemy in battleGrid.currentEnemies)
+            foreach (Cpu structure in battleGrid.currentStructures)
             {
-                if (currentEnemy.beingObj.tags.Contains(Tag.Hostage))
+                if (structure.beingObj.tags.Contains(Tag.Hostage))
                 {
                     Debug.Log("Already a hostage, not spawning evil hostage.");
                     return;
@@ -39,6 +39,7 @@ namespace Hell_Overhaul
             }
 
             Debug.Log("No good hostages, spawning an evil one!");
+            Debug.Log("Current enemies: " + battleGrid.currentEnemies.Select(b => b.beingObj.beingID).Join());
             SpawnCpu(spawnCtrl, "HostageEvil");
         }
 
