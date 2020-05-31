@@ -19,6 +19,7 @@ namespace Hell_Overhaul
         TWO_REMOVES_FOR_PACT,
         BAD_REWARDS,
         IMPERFECT_SHIELDS,
+        LATE_BOSSES_HARDER,
     }
 
     public static class CustomHell
@@ -32,6 +33,7 @@ namespace Hell_Overhaul
             { CustomHellPassEffect.TWO_REMOVES_FOR_PACT, 15 },
             { CustomHellPassEffect.BAD_REWARDS, 16 },
             { CustomHellPassEffect.IMPERFECT_SHIELDS, 17 },
+            { CustomHellPassEffect.LATE_BOSSES_HARDER, 18 },
         };
 
         public static bool IsHellEnabled(RunCtrl rc, CustomHellPassEffect e)

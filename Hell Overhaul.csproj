@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BossPatchStart.cs" />
     <Compile Include="CustomHell.cs" />
     <Compile Include="CreatePactObjectPrototypesPatch.cs" />
     <Compile Include="EnemyCalculateLoopDelayPatch.cs" />
