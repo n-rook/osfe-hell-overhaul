@@ -33,13 +33,13 @@ This does apply to self-damage, but Corset is really good even if you lose 4 hea
 ### 18
 18 increases boss tiers further, but less than the old Hell Pass 13 did. On this tier, the bosses are:
 
-Zone 1: tier 3
-Zone 2: tier 4
-Zone 3: tier 5
-Zone 4: tier 5
-Zone 5: tier 6
-Zone 6: tier 6
-Zone 7: tier 7
+3 4 5 5 6 6 7
+
+For comparison, the base game's highest difficulties are:
+
+4 5 5 6 6 7 7
+
+So this difficulty has lower-tier bosses, especially in the first two zones.
 
 The intent is to make the early game less punishing while still forcing the player to fight tough bosses later. The faulty shields also make boss fights harder, so I don't want them to be too punishing.
 
