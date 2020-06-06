@@ -39,13 +39,13 @@
     <Name>HellPass17</Name>
     <Tags>Hell</Tags>
     <Duration>9999</Duration>
-    <Description>When an attack is shielded, take 10% of its damage</Description>
+    <Description>10% of shielded damage gets through</Description>
   </Pact>
   <Pact itemID="HellPass18">
     <Name>HellPass18</Name>
     <Tags>Hell</Tags>
     <Duration>9999</Duration>
-    <Description>Bosses are stronger outside the first two zones</Description>
+    <Description>Bosses are more difficult still</Description>
   </Pact>
   <Pact itemID="HellPass19">
     <Name>HellPass19</Name>
@@ -55,11 +55,11 @@
     <Description>+0.5 mana regen, but effect is halved</Description>
   </Pact>
   <Pact itemID="HellPass20">
-    <Name>>HellPass20</Name>
+    <Name>HellPass20</Name>
     <Tags>Hell</Tags>
     <Duration>9999</Duration>
     <App trigger="OnTakeHit" effect="Defense" amount="-1"></App>
     <App trigger="OnEquip" effect="ShieldDefense"></App>
-    <Description>-1 def per hit. Def affects shields. Campfire cuts -def by 50%</Description>
+    <Description>-1 def per hit, halved at campsite. Def hits shields.</Description>
   </Pact>
 </Pacts>

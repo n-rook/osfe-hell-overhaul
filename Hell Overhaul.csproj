@@ -65,14 +65,19 @@
     <Compile Include="BossPatchStart.cs" />
     <Compile Include="CustomHell.cs" />
     <Compile Include="CreatePactObjectPrototypesPatch.cs" />
+    <Compile Include="DuelDiskUpdatePatch.cs" />
     <Compile Include="EnemyCalculateLoopDelayPatch.cs" />
     <Compile Include="HellPassButtonUpdateButtonPatch.cs" />
     <Compile Include="ItemManDebug.cs" />
+    <Compile Include="ItemObjectTriggerPatch.cs" />
     <Compile Include="ListCardRemoveThisCardPatch.cs" />
+    <Compile Include="OnHitDebugPatch.cs" />
     <Compile Include="PlayerPatchDamage.cs" />
     <Compile Include="PostCtrlGenerateRewardValuePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HeroSelectCtrlCheat.cs" />
     <Compile Include="SpawnCtrlSpawnBattleZonePatch.cs" />
+    <Compile Include="SpawnCtrlSpawnCampsiteZonePatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

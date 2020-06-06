@@ -20,6 +20,8 @@ namespace Hell_Overhaul
         BAD_REWARDS,
         IMPERFECT_SHIELDS,
         LATE_BOSSES_HARDER,
+        LOSE_DEF_ON_HIT,
+        HALF_MANA_REGEN,
     }
 
     public static class CustomHell
@@ -34,6 +36,11 @@ namespace Hell_Overhaul
             { CustomHellPassEffect.BAD_REWARDS, 16 },
             { CustomHellPassEffect.IMPERFECT_SHIELDS, 17 },
             { CustomHellPassEffect.LATE_BOSSES_HARDER, 18 },
+            { CustomHellPassEffect.HALF_MANA_REGEN, 19 },
+            // Known issue: Modified stats from artifacts aren't saved properly.
+            // Cheating is wrong, so don't do it.
+            // Other known issue: LOSE_DEF_ON_HIT takes effect after Corset type effects
+            { CustomHellPassEffect.LOSE_DEF_ON_HIT, 20 }
         };
 
         public static bool IsHellEnabled(RunCtrl rc, CustomHellPassEffect e)
