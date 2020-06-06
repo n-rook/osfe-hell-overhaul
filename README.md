@@ -43,8 +43,22 @@ So this difficulty has lower-tier bosses, especially in the first two zones.
 
 The intent is to make the early game less punishing while still forcing the player to fight tough bosses later. The faulty shields also make boss fights harder, so I don't want them to be too punishing.
 
-### Things I'd like to work on in the future
+### 19
+19 makes mana regen half as effective, but grants 0.5 regen initially to offset this penalty.
 
-I have plans for 19 and 20, but I'd like to test the first 18 levels first. Hell Overhaul 18 is easier than Hell Pass 14 in the base game, so there's more room to add difficulty.
+This does make alternate sources of mana regen more attractive; characters like Teardown Hazel will actually start with more mana than they normally do.
 
-I'm concerned that Soul Food is way too strong now that there are double the hostages.
+### 20
+Good luck.
+
+### Bugs and design issues
+
+Currently the HP20 effect isn't preserved across save files. If you take advantage of this, you're cheating not only the game, but yourself.
+
+20 also is too harsh: it takes effect if you hit yourself, which makes effects like Corset much, much worse. I'd like to exempt self-damage from its effect.
+
+I'm concerned the player gets too many cheap artifacts due to the preservation of all hostages.
+
+Soul Food is probably way too good right now.
+
+I haven't playtested the higher difficulties, which is why this is an alpha release. They will likely be tuned in the future.

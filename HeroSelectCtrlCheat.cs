@@ -7,7 +7,7 @@ namespace Hell_Overhaul
     [HarmonyPatch("Open")]
     class HeroSelectCtrlCheat
     {
-        private static readonly bool UNLOCK_ALL_HELL_PASSES = true;
+        private static readonly bool UNLOCK_ALL_HELL_PASSES = false;
 
         [HarmonyPrefix]
         static void Cheat(HeroSelectCtrl __instance)
