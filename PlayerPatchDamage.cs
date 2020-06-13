@@ -3,6 +3,108 @@ using UnityEngine;
 
 namespace Hell_Overhaul
 {
+    //[HarmonyPatch(typeof(Being))]
+    //[HarmonyPatch("HitAmount")]
+    //class DebugDebug
+    //{
+    //    [HarmonyPrefix]
+    //    static void Log(int damage,
+    //bool onHitTriggerArts,
+    //bool onHitShake,
+    //Projectile attackRef,
+    //bool pierceDefense,
+    //bool pierceShield,
+    //bool link)
+    //    {
+    //        Debug.Log($"HitAmount {damage} {attackRef == null} {attackRef} {attackRef?.name} {attackRef?.spell} {attackRef?.spellObj}");
+    //    }
+    //}
+
+    //[HarmonyPatch(typeof(SpellObject))]
+    //[HarmonyPatch("OnHit")]
+    //class SpellObjectDebugOnHit
+    //{
+    //    [HarmonyPrefix]
+    //    static void Log(SpellObject __instance, Being hitBeing)
+    //    {
+    //        Debug.Log($"SpellObject#OnHit {__instance?.itemID}, {hitBeing?.name}");
+    //    }
+
+    //    [HarmonyPostfix]
+    //    static void Log()
+    //    {
+    //        Debug.Log("SpellObject#OnHit postfix");
+    //    }
+    //}
+
+    internal static class ConcussionGlobals
+    {
+        internal static bool ConcussionOkay { get; private set; } = true;
+
+        internal static void TemporarilyDisableConcussionDamage()
+        {
+            ConcussionOkay = false;
+        }
+
+        internal static void ReenableConcussionDamage()
+        {
+            ConcussionOkay = true;
+        }
+    }
+
+    [HarmonyPatch(typeof(SpellObject))]
+    [HarmonyPatch("OnHit")]
+    class DisableExtraDamageWhileCertainEffectsAreResolved
+    {
+        private static string UNSTOPPABLE_VIO_ATTACK = "ViPathPunish";
+
+        public delegate void ConcussionHitAmountCallback();
+
+        private static void DoNothing() { }
+        private static void ReenableConcussionDamage()
+        {
+            Debug.Log("Reenabling conclussion damage.");
+            ConcussionGlobals.ReenableConcussionDamage();
+        }
+
+        private static bool blockConcussion(SpellObject obj, Being hitBeing)
+        {
+            Debug.Log($"obj: {obj.itemID}, hitBeing: {hitBeing?.name} {hitBeing?.GetType()}");
+            Player p = hitBeing as Player;
+            if (p is null || !CustomHell.IsHellEnabled(p, CustomHellPassEffect.IMPERFECT_SHIELDS))
+            {
+                return false;
+            }
+            if (obj.itemID != UNSTOPPABLE_VIO_ATTACK)
+            {
+                return false;
+            }
+
+            Debug.Log($"Since spell is {obj.itemID}, disabling concussion damage.");
+            return true;
+        }
+
+        [HarmonyPrefix]
+        static void OnHitPrefix(SpellObject __instance, Being hitBeing, out ConcussionHitAmountCallback __state)
+        {
+            if (!blockConcussion(__instance, hitBeing))
+            {
+                __state = DoNothing;
+                return;
+            }
+
+            ConcussionGlobals.TemporarilyDisableConcussionDamage();
+            __state = ReenableConcussionDamage;
+        }
+
+        [HarmonyPostfix]
+        static void HitAmountPostfix(ConcussionHitAmountCallback __state)
+        {
+            Debug.Log("Postfix");
+            __state();
+        }
+    }
+
     [HarmonyPatch(typeof(Being))]
     [HarmonyPatch("Damage")]
     class PlayerPatchDamage
@@ -13,6 +115,10 @@ namespace Hell_Overhaul
         [HarmonyPrefix]
         static void AddShieldDamage(Being __instance, int amount, bool pierceDefense, bool pierceShield, bool pierceInvince, ItemObject itemObj)
         {
+            Debug.Log($"ItemObj is null?? {itemObj == null}");
+            Debug.Log($"ItemObj {itemObj}");
+            Debug.Log($"ItemObj id {itemObj?.itemID}");
+
             // Self-damage (ie from Corset) does proc this extra damage.
             // So beware!
             if (!(__instance is Player))
@@ -23,6 +129,12 @@ namespace Hell_Overhaul
             Player player = (Player) __instance;
             if (!CustomHell.IsHellEnabled(player.runCtrl, CustomHellPassEffect.IMPERFECT_SHIELDS))
             {
+                return;
+            }
+
+            if (!ConcussionGlobals.ConcussionOkay)
+            {
+                Debug.Log("Concussion temporarily disabled due to unblockable attack");
                 return;
             }
 
@@ -80,8 +192,8 @@ namespace Hell_Overhaul
 
         static bool playerDamageWouldReturnImmediately(Player player, bool pierceInvince)
         {
-            // Copies first line of Damage()
-            return ((double)player.invinceTime >= (double)Time.time && !pierceInvince || ((UnityEngine.Object)player == (UnityEngine.Object)null));
+            Debug.Log($"Player invincetime is {player.invinceTime}");
+            return (player.invinceTime >= Time.time && !pierceInvince);
         }
     }
 }

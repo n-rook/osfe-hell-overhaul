@@ -56,6 +56,11 @@ namespace Hell_Overhaul
             return IsHellEnabled(r.hellPassNum, e);
         }
 
+        public static bool IsHellEnabled(Player p, CustomHellPassEffect e)
+        {
+            return IsHellEnabled(p.runCtrl, e);
+        }
+
         private static bool IsHellEnabled(int hellPassNumber, CustomHellPassEffect e)
         {
             if (!HellLevels.ContainsKey(e))
