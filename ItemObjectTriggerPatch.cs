@@ -8,34 +8,26 @@ using UnityEngine;
 
 namespace Hell_Overhaul
 {
-    [HarmonyPatch(typeof(ItemObject))]
-    [HarmonyPatch("Trigger")]
-    class ItemObjectTriggerPatch
+    [HarmonyPatch(typeof(EffectActions))]
+    [HarmonyPatch("CallFunctionWithItem")]
+    class EffectActionsRecalculateStatsIfNecessary
     {
-        private static readonly string MINUS_DEF_HELL_PASS = "HellPass20";
+        private static readonly List<string> RECALCULATE_STATS_FOR = new List<string> { "Defense" };
 
         [HarmonyPostfix]
-        static void RecalculatePlayerStatsIfNecessary(ItemObject __instance, bool ___checkFailed)
+        static void RecalculatePlayerStatsIfNecessary(string fn, ItemObject itemObj)
         {
-            var itemObj = __instance;
-            if (itemObj.itemID != MINUS_DEF_HELL_PASS) {
-                return;
-            }
-
-            if (___checkFailed)
+            if (!RECALCULATE_STATS_FOR.Contains(fn))
             {
-                Debug.Log("Check failed, returning");
                 return;
             }
-
-            Player p = __instance.being?.player;
+            Player p = itemObj?.being?.player;
             if (p == null)
             {
-                Debug.LogWarning($"Hit being was not player, but rather {__instance.being?.ToString()}");
                 return;
             }
 
-            // TODO: This appears to recalculate stats every frame, for some reason
+            Debug.Log("Recalculating player stats.");
             p.deCtrl.statsScreen.UpdateStats(p);
         }
     }
