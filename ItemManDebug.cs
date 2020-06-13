@@ -8,20 +8,6 @@ using UnityEngine;
 
 namespace Hell_Overhaul
 {
-    /*
-     * To-do list:
-     * 1. Fix issue where localized descriptions are used in HellPassButton
-     * 2. Fix issue where localized descriptions are used in-game (I think)
-     */
-
-
-
-    /*
-     * Bugs to report eventually:
-     * 1. Overriding existing hell passes doesn't work as expected; the new passes replace the old ones in the dict,
-     *    but they both show up in the list
-     * 2. New descriptions aren't used for replacement hell passes on the select screen
-     */
 
     [HarmonyPatch(typeof(ItemManager))]
     [HarmonyPatch("LoadItemData")]
@@ -30,7 +16,6 @@ namespace Hell_Overhaul
         [HarmonyPrepare]
         static bool Prepare(Boss __instance)
         {
-            Debug.Log("Loaded ItemMan debug");
             return true;
         }
 
