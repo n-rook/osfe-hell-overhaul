@@ -27,4 +27,23 @@ namespace Hell_Overhaul
         //    Debug.Log($"Got translation for {itemObj?.itemID}, desc {itemObj?.description}, translationID {translationID}, outcome {__result}");
         //}
     }
+
+    [HarmonyPatch(typeof(DeckCtrl))]
+    [HarmonyPatch("ParseDescription")]
+    class EfAppDefense
+    {
+        [HarmonyPostfix]
+        static string InsertCurrentDefense(string __result, ItemObject itemObj)
+        {
+            // Heavily inspired by current treatment of "efApp.spellPower" in current code
+            string text = __result;
+            if (text.Contains("efApp.defense"))
+            {
+                int defense = itemObj?.artObj?.defense ?? itemObj?.pactObj?.defense ?? 0;
+                text = text.Replace("efApp.defense", $"<b>{defense}</b>");
+                Debug.Log("Changed text to: " + text);
+            }
+            return text;
+        }
+    }
 }

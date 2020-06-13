@@ -19,6 +19,12 @@ namespace Hell_Overhaul
 
             Debug.Log($"Fixing description post-hoc; {__instance.description.text} -> {currentPass.description}");
             __instance.description.text = currentPass.description;
+
+            // Special fix for hell pass 20.
+            if (currentPass.itemID == "HellPass20")
+            {
+                __instance.description.text = currentPass.description.Replace(" (efApp.defense)", "");
+            }
         }
     }
 }

@@ -60,6 +60,6 @@
     <Duration>9999</Duration>
     <App trigger="OnTakeHit" effect="Defense" amount="-1"></App>
     <App trigger="OnEquip" effect="ShieldDefense"></App>
-    <Description>-1 def per hit, halved at campsite. Def hits shields.</Description>
+    <Description>-1 def per hit (efApp.defense), halved at campsite. Def hits shields.</Description>
   </Pact>
 </Pacts>
