@@ -8,7 +8,6 @@ using UnityEngine;
 
 namespace Hell_Overhaul
 {
-
     [HarmonyPatch(typeof(ItemManager))]
     [HarmonyPatch("LoadItemData")]
     class ItemManDebug

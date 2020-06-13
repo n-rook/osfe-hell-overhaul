@@ -68,6 +68,7 @@
     <Compile Include="DuelDiskUpdatePatch.cs" />
     <Compile Include="EnemyCalculateLoopDelayPatch.cs" />
     <Compile Include="HellPassButtonUpdateButtonPatch.cs" />
+    <Compile Include="IgnoreExistingTranslationsForPacts.cs" />
     <Compile Include="ItemManDebug.cs" />
     <Compile Include="ItemObjectTriggerPatch.cs" />
     <Compile Include="ListCardRemoveThisCardPatch.cs" />

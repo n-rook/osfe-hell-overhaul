@@ -69,7 +69,6 @@ namespace Hell_Overhaul
 
         private static bool blockConcussion(SpellObject obj, Being hitBeing)
         {
-            Debug.Log($"obj: {obj.itemID}, hitBeing: {hitBeing?.name} {hitBeing?.GetType()}");
             Player p = hitBeing as Player;
             if (p is null || !CustomHell.IsHellEnabled(p, CustomHellPassEffect.IMPERFECT_SHIELDS))
             {
@@ -100,7 +99,6 @@ namespace Hell_Overhaul
         [HarmonyPostfix]
         static void HitAmountPostfix(ConcussionHitAmountCallback __state)
         {
-            Debug.Log("Postfix");
             __state();
         }
     }
@@ -115,10 +113,6 @@ namespace Hell_Overhaul
         [HarmonyPrefix]
         static void AddShieldDamage(Being __instance, int amount, bool pierceDefense, bool pierceShield, bool pierceInvince, ItemObject itemObj)
         {
-            Debug.Log($"ItemObj is null?? {itemObj == null}");
-            Debug.Log($"ItemObj {itemObj}");
-            Debug.Log($"ItemObj id {itemObj?.itemID}");
-
             // Self-damage (ie from Corset) does proc this extra damage.
             // So beware!
             if (!(__instance is Player))
