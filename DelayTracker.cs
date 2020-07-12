@@ -64,7 +64,7 @@ namespace Hell_Overhaul
 
             tracker.Increment(original, newValue);
 
-
+            maybeLog(name, tracker, original, newValue);
         }
 
         private void maybeLog(string name, SingleEnemyDelayTracker tracker, float oldValue, float newValue)
