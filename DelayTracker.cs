@@ -74,7 +74,7 @@ namespace Hell_Overhaul
             {
                 log_count = 0;
 
-                Debug.Log($"Delay for {name} changed from {oldValue} to {newValue} (avg: {tracker.averageOld()} -> {tracker.averageNew()}");
+                Debug.Log($"Delay for {name} changed from {oldValue} to {newValue} (avg: {tracker.averageOld()} -> {tracker.averageNew()})");
             }
         }
     }

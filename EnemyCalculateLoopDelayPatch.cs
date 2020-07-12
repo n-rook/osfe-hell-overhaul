@@ -56,7 +56,9 @@ namespace Hell_Overhaul
         private static float SlowStartMultiplier(Enemy enemy)
         {
             // We introduce a "slow start" adjustment so packed enemy rooms don't immediately
-            // crush the player.
+            // crush the player
+
+            // TODO: Exempt bosses, not that it matters much.
 
             float battleDuration = enemy.ctrl.stopWatch.timeInSeconds;
 
