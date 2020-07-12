@@ -10,8 +10,7 @@ namespace Hell_Overhaul
         private static readonly float ONE_ENEMY_DELAY = 1.0f;
         private static readonly float PER_ENEMY_DELAY = 0.1f;
 
-        private static readonly float LOG_EVERY_N = 1000;
-        private static int log_count = 0;
+        private static readonly DelayTracker singletonDelayTracker = new DelayTracker();
 
         [HarmonyPostfix]
         static void Postfix(Enemy __instance)
@@ -20,6 +19,7 @@ namespace Hell_Overhaul
             {
                 return;
             }
+            Enemy enemy = __instance;
 
             // Default delay is:
             // 0.9f
@@ -40,19 +40,10 @@ namespace Hell_Overhaul
                 }
             }
 
-            var newDelay = __instance.baseLoopDelay * delayMultiplier;
-            LogAdjustment(__instance.beingObj.loopDelay, newDelay);
+            var newDelay = enemy.baseLoopDelay * delayMultiplier;
+            singletonDelayTracker.trackDelay(enemy, enemy.beingObj.loopDelay, newDelay);
 
-            __instance.beingObj.loopDelay = newDelay;
-        }
-
-        private static void LogAdjustment(float original, float newValue) {
-            log_count += 1;
-            if (log_count >= LOG_EVERY_N)
-            {
-                log_count = 0;
-                Debug.Log($"Changing loop delay from {original} to {newValue}");
-            }
+            enemy.beingObj.loopDelay = newDelay;
         }
     }
 }

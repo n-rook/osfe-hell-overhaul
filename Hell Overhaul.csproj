@@ -65,6 +65,7 @@
     <Compile Include="BossPatchStart.cs" />
     <Compile Include="CustomHell.cs" />
     <Compile Include="CreatePactObjectPrototypesPatch.cs" />
+    <Compile Include="DelayTracker.cs" />
     <Compile Include="DuelDiskUpdatePatch.cs" />
     <Compile Include="EnemyCalculateLoopDelayPatch.cs" />
     <Compile Include="HellPassButtonUpdateButtonPatch.cs" />
