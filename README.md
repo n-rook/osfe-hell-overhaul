@@ -17,6 +17,8 @@ The new Hell Pass 13 just increases the tier to 3, making a more gradual increas
 ### 14
 This one makes enemies attack more quickly in crowded rooms. In the base game, more enemies, structures and minions in a single room cause the enemies to pause for longer between attacks; [see the wiki for details](https://onestepfromeden.gamepedia.com/Enemies#Stagger). In order to make hallway fights harder and more engaging, the impact of these delays is significantly reduced; "real enemies" increase the delay by only 10%, and structures and minions have no impact at all.
 
+This makes the starts of fights extremely harsh, so in addition to this change, enemy delay is increased significantly at the immediate start of a room (within the first 3 seconds). This means you have a few seconds to get your bearings.
+
 ### 15
 15 increases the number of removes required to remove a pact to 3. Removing pacts is very strong, so I'd like to force players to actually take and survive the pacts if they want bonuses.
 
@@ -59,6 +61,6 @@ Currently the HP20 effect isn't preserved across save files. If you take advanta
 
 I'm concerned the player gets too many cheap artifacts due to the preservation of all hostages.
 
-Soul Food is probably way too good right now.
+Given the nature of the changes, Soul Food is much stronger than it is in the base game, and it was already very useful.
 
 I haven't playtested the higher difficulties, which is why this is an alpha release. They will likely be tuned in the future.
