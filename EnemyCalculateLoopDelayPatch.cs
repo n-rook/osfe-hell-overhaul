@@ -9,8 +9,8 @@ namespace Hell_Overhaul
     {
         private static readonly float ONE_ENEMY_DELAY = 1.0f;
         private static readonly float PER_ENEMY_DELAY = 0.1f;
-        private static readonly float SLOW_START_SECS = 4.0f;
-        private static readonly float SLOW_START_END_SECS = 6.0f;
+        private static readonly float SLOW_START_SECS = 2.0f;
+        private static readonly float SLOW_START_END_SECS = 3.0f;
         private static readonly float SLOW_START_MODIFIER = .5f;
 
         private static readonly DelayTracker singletonDelayTracker = new DelayTracker();

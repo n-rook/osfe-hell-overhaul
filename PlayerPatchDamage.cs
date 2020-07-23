@@ -16,7 +16,7 @@ namespace Hell_Overhaul
     //bool pierceShield,
     //bool link)
     //    {
-    //        Debug.Log($"HitAmount {damage} {attackRef == null} {attackRef} {attackRef?.name} {attackRef?.spell} {attackRef?.spellObj}");
+    //        Debug.Log($"HitAmount {damage} {attackRef == null} {attackRef} {attackRef?.name} {attackRef?.spell} {attackRef?.spellObj} pierceDefense? {pierceDefense}");
     //    }
     //}
 
