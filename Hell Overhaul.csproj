@@ -90,7 +90,7 @@
 
 xcopy "$(ProjectDir)bin\Debug\Hell Overhaul.dll" "$(ProjectDir)out\" /Y
 xcopy "$(ProjectDir)data\*" "$(ProjectDir)out\" /Y
-xcopy "$(ProjectDir)src\*" "$(ProjectDir)out\" /Y
+:: xcopy "$(ProjectDir)src\*" "$(ProjectDir)out\" /Y
 
 :: xcopy "$(ProjectDir)out\*" "C:\Program Files (x86)\Steam\steamapps\common\One Step From Eden\OSFE_Data\StreamingAssets\Mods\Hell Overhaul\" /Y
 xcopy "$(ProjectDir)out\*" "C:\Program Files (x86)\Steam\steamapps\workshop\content\960690\2098305763\" /Y
