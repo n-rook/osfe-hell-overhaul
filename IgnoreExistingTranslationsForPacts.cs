@@ -13,7 +13,6 @@ namespace Hell_Overhaul
             // For some reason, checking "itemObj.pactObj.hellpass doesn't work.
             if (itemObj.type != ItemType.Pact || !itemObj.itemID.StartsWith("HellPass1"))
             {
-                Debug.Log($"Item is type {itemObj.type} or not hellpass so ignoring");
                 return;
             }
 
