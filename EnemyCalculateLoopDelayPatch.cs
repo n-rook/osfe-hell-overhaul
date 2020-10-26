@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using System.Collections;
 using UnityEngine;
 
 namespace Hell_Overhaul
@@ -15,10 +16,22 @@ namespace Hell_Overhaul
 
         private static readonly DelayTracker singletonDelayTracker = new DelayTracker();
 
+        private static IEnumerator WinDebug(Enemy enemy)
+        {
+            enemy.Remove();
+            enemy.ctrl.Victory(Ending.Genocide, "WhiteExplosion");
+            enemy.gameObject.SetActive(false);
+            yield break;
+        }
+
         [HarmonyPostfix]
         static void Postfix(Enemy __instance)
         {
             Enemy enemy = __instance;
+
+//            enemy.ctrl.StartCoroutine(WinDebug(enemy));
+//            return;
+
             if (!CustomHell.IsHellEnabled(enemy.runCtrl, CustomHellPassEffect.NO_BUSY_ROOM_SLOWDOWN))
             {
                 return;

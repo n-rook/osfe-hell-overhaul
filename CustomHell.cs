@@ -22,6 +22,7 @@ namespace Hell_Overhaul
         LATE_BOSSES_HARDER,
         LOSE_DEF_ON_HIT,
         HALF_MANA_REGEN,
+        SPECIAL_CREDITS_THEME,
     }
 
     public static class CustomHell
@@ -36,6 +37,7 @@ namespace Hell_Overhaul
             { CustomHellPassEffect.BAD_REWARDS, 16 },
             { CustomHellPassEffect.IMPERFECT_SHIELDS, 17 },
             { CustomHellPassEffect.LATE_BOSSES_HARDER, 18 },
+            { CustomHellPassEffect.SPECIAL_CREDITS_THEME, 18 },
             { CustomHellPassEffect.HALF_MANA_REGEN, 19 },
             // Known issue: Modified stats from artifacts aren't saved properly.
             // Cheating is wrong, so don't do it.
