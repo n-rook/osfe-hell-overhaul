@@ -37,6 +37,10 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\One Step From Eden\OSFE_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="E7.Introloop, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\One Step From Eden\OSFE_Data\Managed\E7.Introloop.dll</HintPath>
+    </Reference>
     <Reference Include="Sirenix.Serialization, Version=2.0.20.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -73,6 +77,8 @@
     <Compile Include="ItemManDebug.cs" />
     <Compile Include="ItemObjectTriggerPatch.cs" />
     <Compile Include="ListCardRemoveThisCardPatch.cs" />
+    <Compile Include="MusicHelper.cs" />
+    <Compile Include="MusicOverride.cs" />
     <Compile Include="OnHitDebugPatch.cs" />
     <Compile Include="PlayerPatchDamage.cs" />
     <Compile Include="PostCtrlGenerateRewardValuePatch.cs" />
@@ -89,11 +95,11 @@
     <PostBuildEvent>del /q "$(ProjectDir)out\*"
 
 xcopy "$(ProjectDir)bin\Debug\Hell Overhaul.dll" "$(ProjectDir)out\" /Y
-xcopy "$(ProjectDir)data\*" "$(ProjectDir)out\" /Y
-:: xcopy "$(ProjectDir)src\*" "$(ProjectDir)out\" /Y
+xcopy "$(ProjectDir)data\*" "$(ProjectDir)out\" /Y /S
+xcopy "$(ProjectDir)src\*" "$(ProjectDir)out\" /Y /S
 
 :: xcopy "$(ProjectDir)out\*" "C:\Program Files (x86)\Steam\steamapps\common\One Step From Eden\OSFE_Data\StreamingAssets\Mods\Hell Overhaul\" /Y
-xcopy "$(ProjectDir)out\*" "C:\Program Files (x86)\Steam\steamapps\workshop\content\960690\2098305763\" /Y
+xcopy "$(ProjectDir)out\*" "C:\Program Files (x86)\Steam\steamapps\workshop\content\960690\2098305763\" /Y /S
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
