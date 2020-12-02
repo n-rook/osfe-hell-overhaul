@@ -26,7 +26,6 @@ namespace Hell_Overhaul
             {
                 return false;
             }
-            Debug.Log("Playing hopefully");
             ctrl.StopIntroLoop();
             ctrl.Play(clip, false);
             return true;

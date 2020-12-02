@@ -41,9 +41,26 @@ namespace Hell_Overhaul
             { CustomHellPassEffect.HALF_MANA_REGEN, 19 },
             // Known issue: Modified stats from artifacts aren't saved properly.
             // Cheating is wrong, so don't do it.
-            // Other known issue: LOSE_DEF_ON_HIT takes effect after Corset type effects
             { CustomHellPassEffect.LOSE_DEF_ON_HIT, 20 }
         };
+
+        /**
+         * Return the actual artifact entity for a given hell pact. May return null.
+         */
+        public static PactObject GetHellPact(Player p, CustomHellPassEffect e)
+        {
+            int num = HellLevels[e];
+            string expectedId = $"HellPass{num}";
+            foreach (PactObject pactObj in p.pactObjs)
+            {
+                if (pactObj.itemID == expectedId)
+                {
+                    return pactObj;
+                }
+            }
+            Debug.LogWarning($"Could not find {expectedId}");
+            return null;
+        }
 
         public static bool IsHellEnabled(RunCtrl rc, CustomHellPassEffect e)
         {
