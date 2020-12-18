@@ -15,16 +15,13 @@ namespace Hell_Overhaul
         [HarmonyPostfix]
         static void Postfix(HellPassButton __instance)
         {
-            var currentPass = __instance.hellPasses[__instance.displayedHellPassNum];
+            HellPassButton button = __instance;
 
-            Debug.Log($"Fixing description post-hoc; {__instance.description.text} -> {currentPass.description}");
-            __instance.description.text = currentPass.description;
+            var currentPass = button.hellPasses[button.displayedHellPassNum];
 
-            // Special fix for hell pass 20.
-            if (currentPass.itemID == "HellPass20")
-            {
-                __instance.description.text = currentPass.description.Replace(" (efApp.defense)", "");
-            }
+            string description = CustomHell.GetGenericDescription(currentPass);
+            Debug.Log($"Fixing description post-hoc; {button.description.text} -> {description}");
+            button.description.text = description;
         }
     }
 }

@@ -61,6 +61,22 @@ namespace Hell_Overhaul
             return null;
         }
 
+        /**
+         * Get a description for a hell pass.
+         * 
+         * This exists because HP20 has a variable in its description that we have to manually exclude.
+         */
+        public static string GetGenericDescription(PactObject pactObj)
+        {
+            string text = pactObj.description;
+            if (pactObj.itemID == "HellPass20")
+            {
+                text = text.Replace(" (efApp.defense)", "");
+            }
+
+            return text;
+        }
+
         public static bool IsHellEnabled(RunCtrl rc, CustomHellPassEffect e)
         {
             // currentHellPasses is a list of all currently enabled hell passes, by index
