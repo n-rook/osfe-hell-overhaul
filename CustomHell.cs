@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Hell_Overhaul
@@ -26,7 +27,7 @@ namespace Hell_Overhaul
 
     public static class CustomHell
     {
-        // If A: i, then A is enabled at or above hell pass i
+        // If A: i, then A is enabled at hell pass i
         private static Dictionary<CustomHellPassEffect, int> HellLevels = new Dictionary<CustomHellPassEffect, int>()
         {
             { CustomHellPassEffect.NO_BUSY_ROOM_SLOWDOWN, 14 },
@@ -62,7 +63,8 @@ namespace Hell_Overhaul
 
         public static bool IsHellEnabled(RunCtrl rc, CustomHellPassEffect e)
         {
-            return IsHellEnabled(rc.currentHellPassNum, e);
+            // currentHellPasses is a list of all currently enabled hell passes, by index
+            return IsHellEnabled(rc.currentHellPasses, e);
         }
 
         /**
@@ -70,7 +72,7 @@ namespace Hell_Overhaul
          */
          public static bool IsHellEnabled(Run r, CustomHellPassEffect e)
         {
-            return IsHellEnabled(r.hellPassNum, e);
+            return IsHellEnabled(r.hellPasses, e);
         }
 
         public static bool IsHellEnabled(Player p, CustomHellPassEffect e)
@@ -78,14 +80,23 @@ namespace Hell_Overhaul
             return IsHellEnabled(p.runCtrl, e);
         }
 
-        private static bool IsHellEnabled(int hellPassNumber, CustomHellPassEffect e)
+        private static bool IsHellEnabled(List<int> hellPasses, CustomHellPassEffect e)
         {
             if (!HellLevels.ContainsKey(e))
             {
                 Debug.LogWarning($"Hell effect not in hell effect dictionary: {e}");
                 return false;
             }
-            return hellPassNumber >= HellLevels[e];
+            int desiredHellPass = HellLevels[e];
+
+            foreach (var i in hellPasses) {
+                if (i == desiredHellPass)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
