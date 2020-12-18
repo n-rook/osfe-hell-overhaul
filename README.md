@@ -2,14 +2,11 @@
 
 This mod is designed to spruce up the later hell passes in One Step From Eden! Currently, the later hell passes increase rapidly in difficulty and affect the balance of the game in odd ways.
 
-This mod is recommended for any player who has unlocked Hell Pass 13. It doesn't change anything before HP11, so there's no reason to play it if you aren't playing on that difficulty yet.
+This mod is recommended for any player who has unlocked Hell Pass 13. It doesn't change anything before then, so there's no reason to play it if you aren't playing on that difficulty yet.
 
 This mod is still in development; I haven't uploaded it to the Steam Workshop yet, because I haven't tested it enough to be sure it won't break things horribly.
 
 ## Changes
-
-### 11
-The new Hell Pass 11 replaces the existing one. Instead of all hostages turning evil, it adds an evil hostage to any battle zone that doesn't have one already. Hostages show up in half of all battle zones, so this keeps a similar number of evil hostages in the game while preserving all the good ones. The intent here is to preserve the fun puzzle of keeping hostages around in battles.
 
 ### 13
 The new Hell Pass 13 just increases the tier to 3, making a more gradual increase in difficulty.
@@ -53,14 +50,10 @@ This does make alternate sources of mana regen more attractive; characters like 
 ### 20
 Good luck.
 
+Pinch, Transfuse and Corset don't trigger the effect, but since they do still respect your current stats, you may still want to stay away from them.
+
 ### Bugs and design issues
 
 Currently the HP20 effect isn't preserved across save files. If you take advantage of this, you're cheating not only the game, but yourself.
 
-20 also is too harsh: it takes effect if you hit yourself, which makes effects like Corset much, much worse. I'd like to exempt self-damage from its effect.
-
-I'm concerned the player gets too many cheap artifacts due to the preservation of all hostages.
-
-Given the nature of the changes, Soul Food is much stronger than it is in the base game, and it was already very useful.
-
-I haven't playtested the higher difficulties, which is why this is an alpha release. They will likely be tuned in the future.
+HP19 is hard on effects that spend mana but give you a mana regen buff in exchange. For example, Terra's Break loadout gets part of the price of breaking tiles refunded with its artifact, but HP19 makes the refund less. This is an unintended consequence, though I'm still thinking about how to fix it.

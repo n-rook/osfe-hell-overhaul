@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Hell_Overhaul
@@ -30,7 +29,6 @@ namespace Hell_Overhaul
         // If A: i, then A is enabled at or above hell pass i
         private static Dictionary<CustomHellPassEffect, int> HellLevels = new Dictionary<CustomHellPassEffect, int>()
         {
-            { CustomHellPassEffect.EVIL_HOSTAGE_IF_NO_GOOD_ONE, 11 },
             { CustomHellPassEffect.NO_BUSY_ROOM_SLOWDOWN, 14 },
             { CustomHellPassEffect.NO_INITIAL_REMOVE, 15 },
             { CustomHellPassEffect.TWO_REMOVES_FOR_PACT, 15 },
