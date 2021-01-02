@@ -16,7 +16,6 @@ namespace Hell_Overhaul
         static void Postfix(HellPassListCard __instance)
         {
             HellPassListCard listCard = __instance;
-            Debug.Log("it list card");
             var currentPass = listCard.pactObj;
             string description = CustomHell.GetGenericDescription(currentPass);
 

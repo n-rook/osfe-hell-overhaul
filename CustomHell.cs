@@ -18,6 +18,7 @@ namespace Hell_Overhaul
         NO_INITIAL_REMOVE,  // not yet implemented
         TWO_REMOVES_FOR_PACT,
         BAD_REWARDS,
+        DOUBLE_FOCUS_LUCK_PENALTY,
         IMPERFECT_SHIELDS,
         LATE_BOSSES_HARDER,
         LOSE_DEF_ON_HIT,
@@ -34,6 +35,7 @@ namespace Hell_Overhaul
             { CustomHellPassEffect.NO_INITIAL_REMOVE, 15 },
             { CustomHellPassEffect.TWO_REMOVES_FOR_PACT, 15 },
             { CustomHellPassEffect.BAD_REWARDS, 16 },
+            { CustomHellPassEffect.DOUBLE_FOCUS_LUCK_PENALTY, 16 },
             { CustomHellPassEffect.IMPERFECT_SHIELDS, 17 },
             { CustomHellPassEffect.LATE_BOSSES_HARDER, 18 },
             { CustomHellPassEffect.SPECIAL_CREDITS_THEME, 18 },

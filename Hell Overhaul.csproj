@@ -72,6 +72,7 @@
     <Compile Include="DelayTracker.cs" />
     <Compile Include="DuelDiskUpdatePatch.cs" />
     <Compile Include="EnemyCalculateLoopDelayPatch.cs" />
+    <Compile Include="FocusCtrlSetFocusedBrandDoublePenalty.cs" />
     <Compile Include="HellPassButtonUpdateButtonPatch.cs" />
     <Compile Include="HellPassListCardDescriptionPatch.cs" />
     <Compile Include="IgnoreExistingTranslationsForPacts.cs" />

@@ -25,7 +25,7 @@
     <Name>HellPass16</Name>
     <Tags>Hell</Tags>
     <Duration>9999</Duration>
-    <Description>Receive inferior rewards</Description>
+    <Description>-10 luck for rewards. Extra -5 if the same brand is focused twice</Description>
   </Pact>
   <Pact itemID="HellPass17">
     <Name>HellPass17</Name>
