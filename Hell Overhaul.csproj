@@ -70,7 +70,6 @@
     <Compile Include="CustomHell.cs" />
     <Compile Include="CreatePactObjectPrototypesPatch.cs" />
     <Compile Include="DelayTracker.cs" />
-    <Compile Include="DuelDiskUpdatePatch.cs" />
     <Compile Include="EnemyCalculateLoopDelayPatch.cs" />
     <Compile Include="FocusCtrlSetFocusedBrandDoublePenalty.cs" />
     <Compile Include="HellPassButtonUpdateButtonPatch.cs" />
@@ -89,9 +88,12 @@
     <Compile Include="HeroSelectCtrlCheat.cs" />
     <Compile Include="SpawnCtrlSpawnCampsiteZonePatch.cs" />
     <Compile Include="SpellObjectPinchHack.cs" />
+    <Compile Include="StatsScreenUpdateStatsArtifactPenalty.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="LICENSE" />
     <None Include="packages.config" />
+    <None Include="README.md" />
     <None Include="src\lua\HellOverhaul.lua" />
   </ItemGroup>
   <ItemGroup>

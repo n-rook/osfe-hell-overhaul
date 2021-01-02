@@ -22,7 +22,9 @@ This makes the starts of fights extremely harsh, so in addition to this change, 
 I may in the future change this down to 2 removes, or change it to 2 removes and get rid of the free remove at the start of the run.
 
 ### 16
-16 reduces effective luck when receiving spells, artifacts and so on by 10. It doesn't impact enemy generation. You'll still be richer than in the normal game.
+16 reduces effective luck when receiving spells, artifacts and so on by 10. It doesn't impact enemy generation. You'll still be richer than in the normal game. Due to implementation limitations, this decrease is not visible in the stats screen.
+
+If you focus the same brand twice, 16 reduces your luck for rewards by 5. This effect is visible on the stats screen. "None" is exempt.
 
 ### 17
 17 makes shields less effective; 10% of damage to shields is done to health as well after this. This effect can't kill the player (if you have 1 hp and take 100 shielded damage, you won't die). The intent is to reward careful play even when shields are engaged.
@@ -43,9 +45,9 @@ So this difficulty has lower-tier bosses, especially in the first two zones.
 The intent is to make the early game less punishing while still forcing the player to fight tough bosses later. The faulty shields also make boss fights harder, so I don't want them to be too punishing.
 
 ### 19
-19 makes mana regen half as effective, but grants 0.5 regen initially to offset this penalty.
+19 halves the regen granted by static sources of mana regen, like Mana Vein or Manajam. It does not impact transient mana regen granted by artifacts like Moonstone; nor does it impact mana granted by effects like Citrine. It also does not affect pacts.
 
-This does make alternate sources of mana regen more attractive; characters like Teardown Hazel will actually start with more mana than they normally do.
+19 does improve artifacts that grant negative mana regen.
 
 ### 20
 Good luck.
