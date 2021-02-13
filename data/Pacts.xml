@@ -43,8 +43,7 @@
     <Name>HellPass19</Name>
     <Tags>Hell</Tags>
     <Duration>9999</Duration>
-    <App trigger="OnEquip" effect="ManaRegen" amount="0.1"></App>
-    <Description>+0.1 mana regen, but constant mana regen from artifacts is halved</Description>
+    <Description>Constant mana regen from artifacts is halved</Description>
   </Pact>
   <Pact itemID="HellPass20">
     <Name>HellPass20</Name>
