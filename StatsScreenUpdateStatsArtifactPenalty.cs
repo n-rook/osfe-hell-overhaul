@@ -13,8 +13,25 @@ namespace Hell_Overhaul
     [HarmonyPatch("UpdateStats")]
     class StatsScreenUpdateStatsArtifactPenalty
     {
+        class StatsScreenInfo
+        {
+            internal readonly float? manaRegen;
+
+            internal StatsScreenInfo(float? manaRegen)
+            {
+                this.manaRegen = manaRegen;
+            }
+        }
+
+        [HarmonyPrefix]
+        static void CheckManaRegenBefore(out StatsScreenInfo __state)
+        {
+            float? playerManaRegen = S.I.batCtrl?.currentPlayer?.manaRegen;
+            __state = new StatsScreenInfo(playerManaRegen);
+        }
+
         [HarmonyPostfix]
-        static void DecreaseManaRegen(StatsScreen __instance, Player player = null)
+        static void DecreaseManaRegen(StatsScreen __instance, StatsScreenInfo __state, Player player = null)
         {
             StatsScreen statsScreen = __instance;
             // This is how the base function works
@@ -32,15 +49,22 @@ namespace Hell_Overhaul
                 return;
             }
 
+            // I've had bug reports come in that this has taken effect multiple times somehow.
+            // I suspect the cause is multiple installation, but just in case, I've put in this
+            // check as well.
+            StatsScreenInfo previousState = __state;
+            if (player.manaRegen == previousState.manaRegen)
+            {
+                return;
+            }
+
             float manaRegenFromArtifacts = 0.0f;
             foreach (var a in player.artObjs)
             {
                 manaRegenFromArtifacts += a.manaRegen;
             }
 
-            // Debug.Log($"{manaRegenFromArtifacts} being halved. Old number was {player.manaRegen}");
             player.manaRegen -= manaRegenFromArtifacts / 2;
-            // Debug.Log($"{manaRegenFromArtifacts} being halved. New number is {player.manaRegen}");
         }
     }
 }
